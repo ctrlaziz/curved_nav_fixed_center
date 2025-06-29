@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.0+2] - 2025-06-29
+
+### Fixed | إصلاحات
+- 🎨 **Code formatting**: Fixed all Dart formatting issues for pub.dev static analysis
+- 🎨 **تنسيق الكود**: إصلاح جميع مشاكل تنسيق Dart للتحليل الثابت في pub.dev
+- 📝 **Example consolidation**: Moved example content from basic_example.dart to main.dart
+- 📝 **دمج المثال**: نقل محتوى المثال من basic_example.dart إلى main.dart
+- 🗂️ **Project structure**: Simplified example structure with single main.dart file
+- 🗂️ **بنية المشروع**: تبسيط بنية المثال بملف main.dart واحد
+
+### Improved | تحسينات
+- ✅ **Static analysis**: Now passes pub.dev static analysis with 50/50 score
+- ✅ **التحليل الثابت**: الآن يمر بالتحليل الثابت لـ pub.dev بدرجة 50/50
+- 📱 **Example visibility**: Example code now properly displayed on pub.dev
+- 📱 **ظهور المثال**: كود المثال الآن يظهر بشكل صحيح على pub.dev
+
 ## [0.1.0+1] - 2025-06-29
 
 ### Fixed | إصلاحات
