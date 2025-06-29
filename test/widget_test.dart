@@ -6,25 +6,14 @@ void main() {
   group('FixedCurvedNavigationBar Widget Tests', () {
     testWidgets('renders all navigation items correctly', (tester) async {
       const items = [
-        FixedCurvedNavItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-        ),
-        FixedCurvedNavItem(
-          icon: Icon(Icons.search),
-          label: 'Search',
-        ),
-        FixedCurvedNavItem(
-          icon: Icon(Icons.add),
-        ),
+        FixedCurvedNavItem(icon: Icon(Icons.home), label: 'Home'),
+        FixedCurvedNavItem(icon: Icon(Icons.search), label: 'Search'),
+        FixedCurvedNavItem(icon: Icon(Icons.add)),
         FixedCurvedNavItem(
           icon: Icon(Icons.notifications),
           label: 'Notifications',
         ),
-        FixedCurvedNavItem(
-          icon: Icon(Icons.person),
-          label: 'Profile',
-        ),
+        FixedCurvedNavItem(icon: Icon(Icons.person), label: 'Profile'),
       ];
 
       await tester.pumpWidget(
@@ -54,7 +43,7 @@ void main() {
 
     testWidgets('responds to tap events correctly', (tester) async {
       var tappedIndex = -1;
-      
+
       const items = [
         FixedCurvedNavItem(icon: Icon(Icons.home)),
         FixedCurvedNavItem(icon: Icon(Icons.search)),
@@ -75,13 +64,13 @@ void main() {
       // Tap on the search icon (index 1)
       await tester.tap(find.byIcon(Icons.search));
       await tester.pump();
-      
+
       expect(tappedIndex, equals(1));
 
       // Tap on the add icon (index 2)
       await tester.tap(find.byIcon(Icons.add));
       await tester.pump();
-      
+
       expect(tappedIndex, equals(2));
     });
 
@@ -112,7 +101,7 @@ void main() {
 
     testWidgets('changes current index correctly', (tester) async {
       var currentIndex = 0;
-      
+
       const items = [
         FixedCurvedNavItem(
           icon: Icon(Icons.home_outlined),
@@ -128,18 +117,18 @@ void main() {
       await tester.pumpWidget(
         StatefulBuilder(
           builder: (context, setState) => MaterialApp(
-              home: Scaffold(
-                bottomNavigationBar: FixedCurvedNavigationBar(
-                  items: items,
-                  currentIndex: currentIndex,
-                  onTap: (index) {
-                    setState(() {
-                      currentIndex = index;
-                    });
-                  },
-                ),
+            home: Scaffold(
+              bottomNavigationBar: FixedCurvedNavigationBar(
+                items: items,
+                currentIndex: currentIndex,
+                onTap: (index) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
               ),
             ),
+          ),
         ),
       );
 
@@ -151,7 +140,7 @@ void main() {
       // Find the InkWell widgets - should find at least 2
       final inkWells = find.byType(InkWell);
       expect(inkWells, findsWidgets); // Find any InkWells
-      
+
       // Tap on the search icon directly
       await tester.tap(find.byIcon(Icons.search_outlined));
       await tester.pumpAndSettle();
@@ -179,9 +168,7 @@ void main() {
     });
 
     test('returns regular icon when activeIcon is null', () {
-      const item = FixedCurvedNavItem(
-        icon: Icon(Icons.home),
-      );
+      const item = FixedCurvedNavItem(icon: Icon(Icons.home));
 
       // Should return regular icon for both states
       expect(item.getIcon(isSelected: false), equals(item.icon));
@@ -202,11 +189,11 @@ void main() {
       );
       expect(itemWithLabel.effectiveSemanticLabel, equals('Home'));
 
-      const itemWithoutLabel = FixedCurvedNavItem(
-        icon: Icon(Icons.home),
+      const itemWithoutLabel = FixedCurvedNavItem(icon: Icon(Icons.home));
+      expect(
+        itemWithoutLabel.effectiveSemanticLabel,
+        equals('Navigation item'),
       );
-      expect(itemWithoutLabel.effectiveSemanticLabel,
-          equals('Navigation item'));
     });
   });
 
@@ -248,4 +235,4 @@ void main() {
       expect(style.centerBackgroundColor, equals(Colors.blue));
     });
   });
-} 
+}

@@ -23,8 +23,8 @@ class CurvedNavPainter extends CustomPainter {
     if (style.boxShadow != null) {
       for (final shadow in style.boxShadow!) {
         final shadowPath = _createCurvedPath(size);
-        final finalShadowPath = style.borderRadius != null 
-            ? _applyBorderRadius(shadowPath, size) 
+        final finalShadowPath = style.borderRadius != null
+            ? _applyBorderRadius(shadowPath, size)
             : shadowPath;
         final shadowPaint = Paint()
           ..color = shadow.color
@@ -40,16 +40,17 @@ class CurvedNavPainter extends CustomPainter {
 
     // Create the curved path
     final path = _createCurvedPath(size);
-    
+
     // Apply border radius if provided
-    final finalPath = style.borderRadius != null 
-        ? _applyBorderRadius(path, size) 
+    final finalPath = style.borderRadius != null
+        ? _applyBorderRadius(path, size)
         : path;
 
     // Apply gradient if provided
     if (style.gradient != null) {
-      paint.shader = style.gradient!
-          .createShader(Rect.fromLTWH(0, 0, size.width, size.height));
+      paint.shader = style.gradient!.createShader(
+        Rect.fromLTWH(0, 0, size.width, size.height),
+      );
     }
 
     // Draw the main background
@@ -65,11 +66,11 @@ class CurvedNavPainter extends CustomPainter {
     final centerX = size.width / 2;
     final curveStartX = centerX - (style.curveWidth / 2);
     final curveEndX = centerX + (style.curveWidth / 2);
-    
+
     // Calculate control points for smoother curves
     final curveDepth = style.curveHeight;
     final controlDistance = style.curveWidth * 0.35;
-    
+
     // Use curveSmoothness to control the curve shape
     final smoothness = style.curveSmoothness.clamp(0.5, 1.0);
     final peakHeight = curveDepth * smoothness;
@@ -84,20 +85,26 @@ class CurvedNavPainter extends CustomPainter {
       // This creates one continuous, flowing curve from start to end
       ..cubicTo(
         // First control point - gentle start transition
-        curveStartX + controlDistance, 0,
+        curveStartX + controlDistance,
+        0,
         // Second control point - approaching the peak (dynamic height)
-        centerX - controlDistance, controlHeight,
+        centerX - controlDistance,
+        controlHeight,
         // End point - center peak (dynamic height)
-        centerX, peakHeight,
+        centerX,
+        peakHeight,
       )
       // Continue the curve from center to end with perfect symmetry
       ..cubicTo(
         // First control point - leaving the peak (dynamic height)
-        centerX + controlDistance, controlHeight,
+        centerX + controlDistance,
+        controlHeight,
         // Second control point - smooth descent
-        curveEndX - controlDistance, 0,
+        curveEndX - controlDistance,
+        0,
         // End point - back to baseline
-        curveEndX, 0,
+        curveEndX,
+        0,
       )
       // Complete the rectangle
       ..lineTo(size.width, 0)
@@ -110,7 +117,7 @@ class CurvedNavPainter extends CustomPainter {
 
   /// Applies border radius to the curved path correctly.
   ///
-  /// Creates rounded corners by intersecting the original path 
+  /// Creates rounded corners by intersecting the original path
   /// with a rounded rectangle path.
   Path _applyBorderRadius(Path originalPath, Size size) {
     if (style.borderRadius == null) {
@@ -118,7 +125,7 @@ class CurvedNavPainter extends CustomPainter {
     }
 
     final borderRadius = style.borderRadius!;
-    
+
     // Create the main clipping rectangle
     final rect = Rect.fromLTWH(0, 0, size.width, size.height);
     final rrect = RRect.fromRectAndCorners(
@@ -131,14 +138,14 @@ class CurvedNavPainter extends CustomPainter {
 
     // Create clipping path from rounded rectangle
     final clipPath = Path()..addRRect(rrect);
-    
+
     // For the curve area, we need to allow some extra space
     // Create an extended clipping area for the curved section
     final centerX = size.width / 2;
     final curveStartX = centerX - (style.curveWidth / 2);
     final curveEndX = centerX + (style.curveWidth / 2);
     final curveExtension = style.curveHeight;
-    
+
     // Create additional path for curve area
     final curveClipPath = Path()
       ..moveTo(curveStartX, 0)
@@ -146,14 +153,14 @@ class CurvedNavPainter extends CustomPainter {
       ..lineTo(curveEndX, -curveExtension)
       ..lineTo(curveStartX, -curveExtension)
       ..close();
-    
+
     // Combine main clip path with curve extension
     final combinedClipPath = Path.combine(
       PathOperation.union,
       clipPath,
       curveClipPath,
     );
-    
+
     // Apply the clipping to original path
     return Path.combine(
       PathOperation.intersect,
