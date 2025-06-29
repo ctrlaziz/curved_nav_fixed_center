@@ -1,6 +1,6 @@
 name: curved_nav_fixed_center
 description: A beautiful curved bottom navigation bar with fixed center curve and smooth animations. Currently under active development - contributions and feedback welcome!
-version: 0.1.0+2
+version: 0.1.1
 homepage: https://github.com/ctrlaziz/curved_nav_fixed_center
 repository: https://github.com/ctrlaziz/curved_nav_fixed_center
 issue_tracker: https://github.com/ctrlaziz/curved_nav_fixed_center/issues
