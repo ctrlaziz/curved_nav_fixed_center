@@ -536,7 +536,7 @@ void main() {
 ```
 MIT License
 
-Copyright (c) 2024 Curved Nav Fixed Center
+Copyright (c) 2025 ctrlaziz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -561,9 +561,8 @@ SOFTWARE.
 
 ## 📞 الدعم | Support
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/curved_nav_fixed_center/issues)
-- 📧 **Email**: support@yourpackage.com
-- 💬 **Discord**: [Flutter Community](https://discord.gg/flutter)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/ctrlaziz/curved_nav_fixed_center/issues)
+- 📧 **Email**: [Contact via GitHub Issues](https://github.com/ctrlaziz/curved_nav_fixed_center/issues)
 - 📖 **Documentation**: [Full Documentation](https://pub.dev/packages/curved_nav_fixed_center)
 
 ---

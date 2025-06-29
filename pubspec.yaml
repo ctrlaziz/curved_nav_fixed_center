@@ -4,6 +4,7 @@ version: 0.1.0
 homepage: https://github.com/ctrlaziz/curved_nav_fixed_center
 repository: https://github.com/ctrlaziz/curved_nav_fixed_center
 issue_tracker: https://github.com/ctrlaziz/curved_nav_fixed_center/issues
+maintainer: ctrlaziz
 
 environment:
   sdk: ^3.8.1
