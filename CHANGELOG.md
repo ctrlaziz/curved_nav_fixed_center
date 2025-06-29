@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.0+1] - 2025-06-29
+
+### Fixed | إصلاحات
+- 📅 **Updated copyright year**: Fixed copyright from 2024 to 2025
+- 📅 **تحديث سنة حقوق الطبع**: تصحيح حقوق الطبع من 2024 إلى 2025
+- 📧 **Contact information**: Updated placeholder contact details with proper GitHub links
+- 📧 **معلومات التواصل**: تحديث معلومات التواصل الوهمية بروابط GitHub صحيحة
+- 🔗 **Documentation links**: Fixed all placeholder URLs and maintainer information
+- 🔗 **روابط التوثيق**: إصلاح جميع الروابط الوهمية ومعلومات المطور
+
+### Documentation | التوثيق
+- ✅ All placeholders removed and replaced with actual information
+- ✅ تم إزالة جميع النصوص الوهمية واستبدالها بمعلومات حقيقية
+- ✅ LICENSE file updated with correct copyright holder
+- ✅ تحديث ملف LICENSE بصاحب حقوق الطبع الصحيح
+
 ## [0.1.0] - 2025-06-29
 
 ### 🎉 Initial Release | الإصدار الأولي
