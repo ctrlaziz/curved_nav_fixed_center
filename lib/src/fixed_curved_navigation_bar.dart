@@ -80,6 +80,7 @@ class _FixedCurvedNavigationBarState extends State<FixedCurvedNavigationBar>
   @override
   Widget build(BuildContext context) => SizedBox(
     height: widget.style.height,
+    width: MediaQuery.sizeOf(context).width,
     child: Stack(
       clipBehavior: Clip.none,
       // Allow center button to extend beyond bounds
