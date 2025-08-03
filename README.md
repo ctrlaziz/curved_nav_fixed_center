@@ -3,7 +3,7 @@
 <div align="center">
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Pub Version](https://img.shields.io/badge/pub-v0.1.0-blue.svg)
+![Pub Version](https://img.shields.io/badge/pub-v0.1.2-blue.svg)
 ![Flutter](https://img.shields.io/badge/Flutter-%5E3.8.1-blue.svg)
 ![Development](https://img.shields.io/badge/status-active%20development-green.svg)
 
@@ -46,7 +46,7 @@ A new and powerful Flutter library that provides a curved bottom navigation bar 
 
 ```yaml
 dependencies:
-  curved_nav_fixed_center: ^0.1.0
+  curved_nav_fixed_center: ^0.1.2
 ```
 
 ### 2. تثبيت الحزمة | Install Package
